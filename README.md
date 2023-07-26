@@ -1,2 +1,2 @@
 # SPPU-Computer-Engineering-Assignments
-All Computer Engineering syllabus lab assignments from 2nd and 3rd year
+All Computer Engineering (2019 Syllabus) lab assignments of 2nd & 3rd year.
