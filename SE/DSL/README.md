@@ -21,9 +21,9 @@ ASIGNMENT LIST
   c) Multiplication of two matrices
   d) Transpose of a matrix
 
-4A. Write a python program to store roll numbers of student in array who attended training program in random order. Write function for searching whether particular student attended training program or not, using Linear search and Sentinel search.
+    4A. Write a python program to store roll numbers of student in array who attended training program in random order. Write function for searching whether particular student attended training program or not, using Linear search and Sentinel search.
 
-4B. Write a python program to store roll numbers of student array who attended training program in sorted order. Write function for searching whether particular student attended training program or not, using Binary search and Fibonacci search
+    4B. Write a python program to store roll numbers of student array who attended training program in sorted order. Write function for searching whether particular student attended training program or not, using Binary search and Fibonacci search
 
 5. Write a python program to store second year percentage of students in array. Write function for sorting array of floating-point numbers in ascending order using:
   a) Insertion sort
