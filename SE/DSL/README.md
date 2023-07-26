@@ -21,9 +21,9 @@ Q3. Write a python program to compute following computation on matrix:
   c) Multiplication of two matrices
   d) Transpose of a matrix
 
-Q4-A. Write a python program to store roll numbers of student in array who attended training program in random order. Write function for searching whether particular student attended training program or not, using Linear search and Sentinel search.
+Q4A. Write a python program to store roll numbers of student in array who attended training program in random order. Write function for searching whether particular student attended training program or not, using Linear search and Sentinel search.
 
-Q4-B. Write a python program to store roll numbers of student array who attended training program in sorted order. Write function for searching whether particular student attended training program or not, using Binary search and Fibonacci search
+Q4B. Write a python program to store roll numbers of student array who attended training program in sorted order. Write function for searching whether particular student attended training program or not, using Binary search and Fibonacci search
 
 Q5. Write a python program to store second year percentage of students in array. Write function for sorting array of floating-point numbers in ascending order using:
   a) Insertion sort
@@ -32,12 +32,12 @@ And display top five scores
 
 Q6. Write a python program to store first year percentage of students in array. Write function for sorting array of floating point numbers in ascending order using quick sort and display top five scores.
 
-Q7-A. The ticket booking system of Cinemax theater has to be implemented using C++ program. There are 10 rows and 7 seats in each row. Doubly circular linked list has to be maintained to keep track of free seats at rows. Assume some random booking to start with. Use array to store pointers (Head pointer) to each row. On demand:
+Q7A. The ticket booking system of Cinemax theater has to be implemented using C++ program. There are 10 rows and 7 seats in each row. Doubly circular linked list has to be maintained to keep track of free seats at rows. Assume some random booking to start with. Use array to store pointers (Head pointer) to each row. On demand:
   a) The list of available seats is to be displayed
   b) The seats are to be booked
   c) The booking can be cancelled
 
-Q7-B. Write C++ program for storing binary number using doubly linked lists. Write functions:
+Q7B. Write C++ program for storing binary number using doubly linked lists. Write functions:
   a) To compute 1‘s and 2‘s complement
   b) Add two binary numbers
   
