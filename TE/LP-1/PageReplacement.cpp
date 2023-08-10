@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <vector>
 #include <unordered_set>
 using namespace std;
 
@@ -16,7 +17,7 @@ class Paging
         num = 0;
     }
 
-    void getReferenceString();
+    void getRefString();
     void FIFO();
     void OPRA();
     void LRU();
@@ -25,7 +26,7 @@ class Paging
 
 
 // accepts an array of integers which forms the reference string
-void Paging::getReferenceString()
+void Paging::getRefString()
 {
     cout<<"\nEnter no. of frames: ";
     cin>>frames;
@@ -75,9 +76,9 @@ void Paging::FIFO()
                 cout<<pages[i]<<"\t";
                 for (auto f=currentSet.begin(); f!=currentSet.end(); f++)
                 {
-                    cout<<*f<<"\t";
+                    cout<<"| "<<*f<<"  ";
                 }
-                cout<<endl;
+                cout<<"| "<<endl;
             }
             // if incoming page is already in set of current pages
             else
@@ -111,9 +112,9 @@ void Paging::FIFO()
                 cout<<pages[i]<<"\t";
                 for (auto f=currentSet.begin(); f!=currentSet.end(); f++)
                 {
-                    cout<<*f<<"\t";
+                    cout<<"| "<<*f<<"  ";
                 }
-                cout<<endl;
+                cout<<"| "<<endl;
             }
             // if incoming page is already in set of current pages
             else
@@ -187,9 +188,10 @@ void Paging::OPRA()
                     cout<<pages[i]<<"\t";
                     for (int f=0; f<frames; f++)
                     {
-                        cout<<currentSet[f]<<"\t";
+                        if (currentSet[f] != -1)
+                            cout<<"| "<<currentSet[f]<<"  ";
                     }
-                    cout<<endl;
+                    cout<<"| "<<endl;
 
                     break;
                 }
@@ -237,9 +239,10 @@ void Paging::OPRA()
                 cout<<pages[i]<<"\t";
                 for (int f=0; f<frames; f++)
                 {
-                    cout<<currentSet[f]<<"\t";
+                    if (currentSet[f] != -1)
+                        cout<<"| "<<currentSet[f]<<"  ";
                 }
-                cout<<endl;
+                cout<<"| "<<endl;
             }
         }
     }
@@ -304,9 +307,10 @@ void Paging::LRU()
                     cout<<pages[i]<<"\t";
                     for (int f=0; f<frames; f++)
                     {
-                        cout<<currentSet[f]<<"\t";
+                        if (currentSet[f] != -1)
+                            cout<<"| "<<currentSet[f]<<"  ";
                     }
-                    cout<<endl;
+                    cout<<"| "<<endl;
 
                     break;
                 }
@@ -349,9 +353,10 @@ void Paging::LRU()
                 cout<<pages[i]<<"\t";
                 for (int f=0; f<frames; f++)
                 {
-                    cout<<currentSet[f]<<"\t";
+                    if (currentSet[f] != -1)
+                        cout<<"| "<<currentSet[f]<<"  ";
                 }
-                cout<<endl;
+                cout<<"| "<<endl;
             }
         }
     }
@@ -378,7 +383,7 @@ int main()
         switch(ch)
         {
             case 1:
-            p.getReferenceString();
+            p.getRefString();
             break;
 
             case 2:
@@ -392,6 +397,9 @@ int main()
             case 4:
             p.LRU();
             break;
+
+            case 5:
+            exit(0);
 
             default:
             cout<<"\nInvalid choice!";
