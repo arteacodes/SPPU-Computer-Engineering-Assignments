@@ -4,6 +4,7 @@
 #include <algorithm>
 using namespace std;
 
+
 class Mnemonics
 {
     map <string, int> AD;
@@ -55,8 +56,64 @@ class Mnemonics
     }
 
 
-    string getClassType(string str)
+    string getClassType(string key)
     {
+        map <string, int>::iterator itr;
         
+        itr = AD.find(key);
+        if (itr != AD.end())
+            return "AD";
+
+        itr = IS.find(key);
+        if (itr != IS.end())
+            return "IS";
+
+        itr = DL.find(key);
+        if (itr != DL.end())
+            return "DL";
+
+        itr = CC.find(key);
+        if (itr != CC.end())
+            return "CC";
+
+        itr = REG.find(key);
+        if (itr != REG.end())
+            return "REG";
+
+        return "";
     }
+
+
+    int getMachineCode(string key)
+    {
+        map <string, int>::iterator itr;
+        
+        itr = AD.find(key);
+        if (itr != AD.end())
+            return itr->second;
+
+        itr = IS.find(key);
+        if (itr != IS.end())
+            return itr->second;
+
+        itr = DL.find(key);
+        if (itr != DL.end())
+            return itr->second;
+
+        itr = CC.find(key);
+        if (itr != CC.end())
+            return itr->second;
+
+        itr = REG.find(key);
+        if (itr != REG.end())
+            return itr->second;
+
+        return -1;
+    }
+};
+
+
+class Pass_1
+{
+    Mnemonics opTab;
 };
