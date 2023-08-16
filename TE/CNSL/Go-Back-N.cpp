@@ -1,6 +1,6 @@
-#include<iostream>
-#include<ctime>
-#include<cstdlib>
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
 class GoBackN
@@ -59,7 +59,12 @@ class GoBackN
             i += x;
         }
 
+        cout.width(70);
+        cout.fill('-');
         cout<<"\nTotal no. of transmissions = "<<transmitted<<endl;
+        cout.width(41);
+        cout.fill('-');
+        cout<<"\n";
     }
 };
 
