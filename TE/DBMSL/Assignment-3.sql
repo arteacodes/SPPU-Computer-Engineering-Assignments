@@ -13,6 +13,7 @@ mysql> select* from employee;
 +--------+---------+-----------+-----------+---------------+------------+---------------+--------------+
 8 rows in set (0.00 sec)
 
+    
 mysql> select* from department;
 +---------+-----------------+---------------+
 | dept_id | dept_name       | dept_location |
@@ -24,6 +25,7 @@ mysql> select* from department;
 +---------+-----------------+---------------+
 4 rows in set (0.00 sec)
 
+    
 mysql> select* from project;
 +---------+---------+------------------+---------------+-----------+-----------+
 | proj_id | dept_id | proj_name        | proj_location | proj_cost | proj_year |
@@ -37,6 +39,7 @@ mysql> select* from project;
 +---------+---------+------------------+---------------+-----------+-----------+
 6 rows in set (0.00 sec)
 
+    
 mysql> select* from employee natural join department;
 +---------+--------+-----------+-----------+---------------+------------+---------------+--------------+-----------------+---------------+
 | dept_id | emp_id | emp_fname | emp_lname | emp_position  | emp_salary | emp_birthdate | emp_joindate | dept_name       | dept_location |
@@ -85,9 +88,6 @@ mysql> select employee.*, proj_id, proj_cost from employee inner join project us
 8 rows in set (0.00 sec)
 
 
-
-
-
 mysql> select dept_name, emp_fname, emp_lname, emp_position, proj_year from employee, department, project where employee.dept_id = department.dept_id and employee.dept_id = project.dept_id and proj_year='2005';
 +-----------+-----------+-----------+--------------+-----------+
 | dept_name | emp_fname | emp_lname | emp_position | proj_year |
@@ -113,7 +113,6 @@ mysql> select dept_name, emp_fname, emp_lname, emp_position, proj_year from empl
 | Sales     | James     | Lee       | Salesperson  |      2005 |
 +-----------+-----------+-----------+--------------+-----------+
 4 rows in set (0.00 sec)
-
 
 
 mysql> select emp_position, dept_name from employee inner join department using (dept_id) inner join project using (dept_id) where proj_cost > 300000;
@@ -195,13 +194,12 @@ mysql> select* from emp_view;
 10 rows in set (0.00 sec)
 
 
-mysql> delete from emp_view where emp_id = 4012;
-ERROR 1395 (HY000): Can not delete from join view 'te31301db.emp_view'
 mysql> drop view emp_view;
 Query OK, 0 rows affected (0.00 sec)
 
+---------------------------------------------------------------------------------------------------------------
 
-Q1. SQL Query to fetch records that are present in one table but not in another table.
+-- Q1. SQL Query to fetch records that are present in one table but not in another table.
 mysql> select * from department where dept_id not in (select dept_id from project);
 +---------+-----------+---------------+
 | dept_id | dept_name | dept_location |
@@ -211,11 +209,11 @@ mysql> select * from department where dept_id not in (select dept_id from projec
 1 row in set (0.00 sec)
 
 
-Q2. SQL query to fetch all the employees who are not working on any project.
+-- Q2. SQL query to fetch all the employees who are not working on any project.
 
 
 
-Q3. SQL query to fetch all the Employees from EmployeeDetails who joined in the Year 2020.
+-- Q3. SQL query to fetch all the Employees from EmployeeDetails who joined in the Year 2020.
 mysql> select * from employee where year(emp_joindate)=2020;
 +--------+---------+-----------+-----------+--------------+------------+---------------+--------------+
 | emp_id | dept_id | emp_fname | emp_lname | emp_position | emp_salary | emp_birthdate | emp_joindate |
@@ -226,7 +224,7 @@ mysql> select * from employee where year(emp_joindate)=2020;
 2 rows in set (0.01 sec)
 
 
-Q4. Fetch all employees from EmployeeDetails who have a salary record in EmployeeSalary.
+-- Q4. Fetch all employees from EmployeeDetails who have a salary record in EmployeeSalary.
 mysql> select * from employee where emp_salary is not null;
 +--------+---------+-----------+-----------+---------------+------------+---------------+--------------+
 | emp_id | dept_id | emp_fname | emp_lname | emp_position  | emp_salary | emp_birthdate | emp_joindate |
@@ -243,7 +241,7 @@ mysql> select * from employee where emp_salary is not null;
 +--------+---------+-----------+-----------+---------------+------------+---------------+--------------+
 9 rows in set (0.00 sec)
 
-Q5. Write an SQL query to fetch a project-wise count of employees.
+-- Q5. Write an SQL query to fetch a project-wise count of employees.
 mysql> select proj_id, count(emp_id) as proj_count from project inner join employee using (dept_id) group by proj_id;
 +---------+------------+
 | proj_id | proj_count |
@@ -258,7 +256,7 @@ mysql> select proj_id, count(emp_id) as proj_count from project inner join emplo
 6 rows in set (0.01 sec)
 
 
-Q6. Fetch employee names and salaries even if the salary value is not present for the employee.
+-- Q6. Fetch employee names and salaries even if the salary value is not present for the employee.
 mysql> select emp_fname, emp_salary from employee;
 +-----------+------------+
 | emp_fname | emp_salary |
@@ -277,7 +275,7 @@ mysql> select emp_fname, emp_salary from employee;
 10 rows in set (0.00 sec)
 
 
-Q7. Write an SQL query to fetch all the Employees who are also managers.
+-- Q7. Write an SQL query to fetch all the Employees who are also managers.
 mysql> select * from employee where emp_position = 'Manager';
 +--------+---------+-----------+-----------+--------------+------------+---------------+--------------+
 | emp_id | dept_id | emp_fname | emp_lname | emp_position | emp_salary | emp_birthdate | emp_joindate |
@@ -287,7 +285,7 @@ mysql> select * from employee where emp_position = 'Manager';
 1 row in set (0.00 sec)
 
 
-Q8. Write an SQL query to fetch duplicate records from EmployeeDetails.
+-- Q8. Write an SQL query to fetch duplicate records from EmployeeDetails.
 mysql> select emp_fname, emp_lname, emp_position, emp_salary from employee group by emp_position having count(emp_position)>1;
 +-----------+-----------+--------------+------------+
 | emp_fname | emp_lname | emp_position | emp_salary |
@@ -297,7 +295,7 @@ mysql> select emp_fname, emp_lname, emp_position, emp_salary from employee group
 1 row in set (0.00 sec)
 
 
-Q9. Write an SQL query to fetch only odd rows from the table.
+-- Q9. Write an SQL query to fetch only odd rows from the table.
 mysql> select * from employee where mod(emp_id, 2)=1;
 +--------+---------+-----------+-----------+--------------+------------+---------------+--------------+
 | emp_id | dept_id | emp_fname | emp_lname | emp_position | emp_salary | emp_birthdate | emp_joindate |
@@ -311,7 +309,7 @@ mysql> select * from employee where mod(emp_id, 2)=1;
 5 rows in set (0.00 sec)
 
 
-Q10. Write a query to find the 3rd highest salary from a table without top or limit keyword.
+-- Q10. Write a query to find the 3rd highest salary from a table without top or limit keyword.
 mysql> select emp_fname, emp_salary from employee order by emp_salary desc limit 1 offset 2;
 +-----------+------------+
 | emp_fname | emp_salary |
@@ -321,7 +319,7 @@ mysql> select emp_fname, emp_salary from employee order by emp_salary desc limit
 1 row in set (0.00 sec)
 
 
-Q11. Create a query that prints first and last name data from a sample table into a column called FULL_NAME.
+-- Q11. Create a query that prints first and last name data from a sample table into a column called FULL_NAME.
 mysql> select concat(emp_fname, " ", emp_lname) as full_name from employee;
 +------------------+
 | full_name        |
@@ -340,8 +338,7 @@ mysql> select concat(emp_fname, " ", emp_lname) as full_name from employee;
 10 rows in set (0.00 sec)
 
 
-
-Q12. Write a query that prints the details from a sample table ascending in first name order.
+-- Q12. Write a query that prints the details from a sample table ascending in first name order.
 mysql> select * from employee order by emp_fname;
 +--------+---------+-----------+-----------+---------------+------------+---------------+--------------+
 | emp_id | dept_id | emp_fname | emp_lname | emp_position  | emp_salary | emp_birthdate | emp_joindate |
@@ -360,7 +357,7 @@ mysql> select * from employee order by emp_fname;
 10 rows in set (0.00 sec)
 
 
-Q13. Print the current date using a SQL query.
+-- Q13. Print the current date using a SQL query.
 mysql> select curdate();
 +------------+
 | curdate()  |
@@ -370,7 +367,7 @@ mysql> select curdate();
 1 row in set (0.00 sec)
 
 
-Q14. print name of employee/student works for/studies in department/class. "works for/studies in" should be added while displaying result
+-- Q14. print name of employee/student works for/studies in department/class. "works for/studies in" should be added while displaying result
 mysql> select concat(emp_fname, ' ', emp_lname, ' works for ', dept_name) as description from employee inner join department using(dept_id);
 +----------------------------------------+
 | description                            |
@@ -389,8 +386,7 @@ mysql> select concat(emp_fname, ' ', emp_lname, ' works for ', dept_name) as des
 10 rows in set (0.01 sec)
 
 
-
-Q15. Display any 5 random rows
+-- Q15. Display any 5 random rows
 mysql> select * from employee order by rand() limit 5;
 +--------+---------+-----------+-----------+---------------+------------+---------------+--------------+
 | emp_id | dept_id | emp_fname | emp_lname | emp_position  | emp_salary | emp_birthdate | emp_joindate |
@@ -402,6 +398,3 @@ mysql> select * from employee order by rand() limit 5;
 |   4004 |     114 | Sarah     | Wilson    | Administrator |   48000.00 | 1988-01-07    | 2021-11-05   |
 +--------+---------+-----------+-----------+---------------+------------+---------------+--------------+
 5 rows in set (0.01 sec)
-
-
-
