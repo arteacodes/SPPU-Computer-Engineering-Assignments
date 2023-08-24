@@ -1,4 +1,4 @@
-﻿AREA OF A CIRCLE
+﻿-- AREA OF A CIRCLE
 
 mysql> delimiter //
 mysql> create procedure circle (r int)
@@ -79,9 +79,9 @@ mysql> select* from areas;
 +--------+--------+
 1 row in set (0.00 sec)
 
-------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
 
-LIBRARY FINE CALCULATION
+--LIBRARY FINE CALCULATION
 
 mysql> delimiter //
 mysql> create procedure calculate(in roll int)
