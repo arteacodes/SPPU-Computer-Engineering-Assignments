@@ -1,6 +1,7 @@
 mysql> create table department (dept_id int(5) primary key, dept_name varchar(20), dept_location varchar(20));
 Query OK, 0 rows affected (0.04 sec)
 
+    
 mysql> desc department;
 +---------------+-------------+------+-----+---------+-------+
 | Field         | Type        | Null | Key | Default | Extra |
@@ -11,6 +12,7 @@ mysql> desc department;
 +---------------+-------------+------+-----+---------+-------+
 3 rows in set (0.01 sec)
 
+    
 mysql> insert into department values (110, "Sales", "Pune");
 Query OK, 1 row affected (0.04 sec)
 
@@ -26,6 +28,7 @@ Query OK, 1 row affected (0.01 sec)
 mysql> insert into department values (114, "Human Resources", "Delhi");
 Query OK, 1 row affected (0.02 sec)
 
+    
 mysql> select* from department;
 +---------+-----------------+---------------+
 | dept_id | dept_name       | dept_location |
@@ -38,9 +41,11 @@ mysql> select* from department;
 +---------+-----------------+---------------+
 5 rows in set (0.00 sec)
 
+    
 mysql> create table employee (emp_id int(5) primary key, dept_id int(5), emp_fname varchar(20), emp_lname varchar(20), emp_position varchar(20), emp_salary decimal(10,2), emp_joindate date, foreign key (dept_id) references department(dept_id));
 Query OK, 0 rows affected (0.04 sec)
 
+    
 mysql> desc employee;
 +--------------+---------------+------+-----+---------+-------+
 | Field        | Type          | Null | Key | Default | Extra |
@@ -55,6 +60,7 @@ mysql> desc employee;
 +--------------+---------------+------+-----+---------+-------+
 7 rows in set (0.00 sec)
 
+    
 mysql> insert into employee values (4001, 113, "John", "Doe", "Manager", 75000, "2022-01-15");
 Query OK, 1 row affected (0.02 sec)
 
@@ -86,6 +92,7 @@ mysql> insert into employee values (4010, 110, "James", "Lee", "Salesperson
 ", 55000, “2023-03-20”);
 Query OK, 1 row affected (0.01 sec)
 
+    
 mysql> select* from employee;
 +--------+---------+-----------+-----------+-------------------+------------+--------------+
 | emp_id | dept_id | emp_fname | emp_lname | emp_position      | emp_salary | emp_joindate |
@@ -103,9 +110,11 @@ mysql> select* from employee;
 +--------+---------+-----------+-----------+-------------------+------------+--------------+
 10 rows in set (0.01 sec)
 
+    
 mysql> create table project (proj_id int(5) primary key, dept_id int(5), proj_name varchar(20), proj_location varchar(20), proj_cost decimal(10,2), proj_year year), foreign key(dept_id) references department(dept_id);
 Query OK, 0 rows affected (0.05 sec)
 
+    
 mysql> desc project;
 +---------------+---------------+------+-----+---------+-------+
 | Field         | Type          | Null | Key | Default | Extra |
@@ -119,6 +128,7 @@ mysql> desc project;
 +---------------+---------------+------+-----+---------+-------+
 6 rows in set (0.00 sec)
 
+    
 mysql> insert into project values (501, 110, "ProductX Launch", "Pune", 250000, 2022); 
 Query OK, 1 row affected (0.04 sec)
 
@@ -142,6 +152,7 @@ Query OK, 1 row affected (0.01 sec)
 mysql> insert into project values (507, 114, "Employee Welfare", "Delhi", 400000, 2022);
 Query OK, 1 row affected (0.01 sec)
 
+    
 mysql> select* from project;
 +---------+---------+------------------+---------------+-----------+-----------+
 | proj_id | dept_id | proj_name        | proj_location | proj_cost | proj_year |
@@ -156,6 +167,7 @@ mysql> select* from project;
 +---------+---------+------------------+---------------+-----------+-----------+
 7 rows in set (0.00 sec)
 
+    
 mysql> select* from department;
 +---------+-----------------+---------------+
 | dept_id | dept_name       | dept_location |
@@ -168,6 +180,7 @@ mysql> select* from department;
 +---------+-----------------+---------------+
 5 rows in set (0.00 sec)
 
+    
 mysql> select* from employee;
 +--------+---------+-----------+-----------+---------------+------------+--------------+
 | emp_id | dept_id | emp_fname | emp_lname | emp_position  | emp_salary | emp_joindate |
@@ -185,6 +198,7 @@ mysql> select* from employee;
 +--------+---------+-----------+-----------+---------------+------------+--------------+
 10 rows in set (0.00 sec)
 
+    
 mysql> SELECT e.* 
     -> FROM employee e 
     -> JOIN department d ON e.dept_id = d.dept_id 
@@ -197,6 +211,7 @@ mysql> SELECT e.*
 +--------+---------+-----------+-----------+--------------+------------+--------------+
 1 row in set (0.00 sec)
 
+    
 mysql> SELECT DISTINCT emp_position FROM employee;
 +---------------+
 | emp_position  |
@@ -213,12 +228,14 @@ mysql> SELECT DISTINCT emp_position FROM employee;
 +---------------+
 9 rows in set (0.00 sec)
 
+    
 mysql> UPDATE employee 
     -> SET emp_salary = emp_salary*1.1 
     -> WHERE YEAR(emp_joindate) < 2022;
 Query OK, 3 rows affected (0.01 sec)
 Rows matched: 3  Changed: 3  Warnings: 0
 
+    
 mysql> select* from employee;
 +--------+---------+-----------+-----------+---------------+------------+--------------+
 | emp_id | dept_id | emp_fname | emp_lname | emp_position  | emp_salary | emp_joindate |
@@ -236,17 +253,21 @@ mysql> select* from employee;
 +--------+---------+-----------+-----------+---------------+------------+--------------+
 10 rows in set (0.00 sec)
 
+    
 mysql> alter table employee add foreign key(dept_id) references department(dept_id) on delete cascade on update cascade;
 Query OK, 10 rows affected (0.20 sec)
 Records: 10  Duplicates: 0  Warnings: 0
 
+    
 mysql> alter table project add foreign key(dept_id) references department(dept_id) on delete cascade on update cascade;
 Query OK, 7 rows affected (0.08 sec)
 Records: 7  Duplicates: 0  Warnings: 0
 
+    
 mysql> DELETE FROM department WHERE dept_location="Mumbai";
 Query OK, 1 row affected (0.01 sec)
 
+    
 mysql> select proj_name from project where proj_location="Pune";
 +-----------------+
 | proj_name       |
@@ -256,6 +277,7 @@ mysql> select proj_name from project where proj_location="Pune";
 +-----------------+
 2 rows in set (0.00 sec)
 
+    
 mysql> select* from project where proj_cost between 100000 and 500000;
 +---------+---------+------------------+---------------+-----------+-----------+
 | proj_id | dept_id | proj_name        | proj_location | proj_cost | proj_year |
@@ -269,6 +291,7 @@ mysql> select* from project where proj_cost between 100000 and 500000;
 +---------+---------+------------------+---------------+-----------+-----------+
 6 rows in set (0.00 sec)
 
+    
 mysql> select* from project where proj_cost = (select max(proj_cost) from project);
 +---------+---------+-----------------+---------------+-----------+-----------+
 | proj_id | dept_id | proj_name       | proj_location | proj_cost | proj_year |
@@ -277,6 +300,7 @@ mysql> select* from project where proj_cost = (select max(proj_cost) from projec
 +---------+---------+-----------------+---------------+-----------+-----------+
 1 row in set (0.00 sec)
 
+    
 mysql> select avg(proj_cost) as average_cost from project;
 +---------------+
 | average_cost  |
@@ -285,6 +309,7 @@ mysql> select avg(proj_cost) as average_cost from project;
 +---------------+
 1 row in set (0.00 sec)
 
+    
 mysql> select emp_id, emp_fname, emp_lname from employee order by emp_lname desc;
 +--------+-----------+-----------+
 | emp_id | emp_fname | emp_lname |
@@ -300,6 +325,7 @@ mysql> select emp_id, emp_fname, emp_lname from employee order by emp_lname desc
 +--------+-----------+-----------+
 8 rows in set (0.00 sec)
 
+    
 mysql> select proj_name, proj_location, proj_cost from project where proj_year in (2021, 2022);
 +------------------+---------------+-----------+
 | proj_name        | proj_location | proj_cost |
@@ -311,11 +337,11 @@ mysql> select proj_name, proj_location, proj_cost from project where proj_year i
 +------------------+---------------+-----------+
 4 rows in set (0.00 sec)
 
+    
 mysql> commit;
 Query OK, 0 rows affected (0.00 sec)
 
-____________________________________________________________________________________________________________________________________
-
+---------------------------------------------------------------------------------------------------------------
 
 mysql> CREATE VIEW emp_view AS
     -> SELECT emp_id, emp_fname, emp_lname, emp_birthdate, e.dept_id, d.dept_name, emp_position, emp_salary
@@ -323,6 +349,7 @@ mysql> CREATE VIEW emp_view AS
     -> WHERE e.dept_id = d.dept_id;
 Query OK, 0 rows affected (0.02 sec)
 
+    
 mysql> select* from emp_view;
 +--------+-----------+-----------+---------------+---------+-----------------+---------------+------------+
 | emp_id | emp_fname | emp_lname | emp_birthdate | dept_id | dept_name       | emp_position  | emp_salary |
@@ -340,16 +367,20 @@ mysql> select* from emp_view;
 +--------+-----------+-----------+---------------+---------+-----------------+---------------+------------+
 10 rows in set (0.00 sec)
 
+    
 mysql> CREATE UNIQUE INDEX emp_index ON employee(emp_id);
 Query OK, 0 rows affected (0.09 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
+    
 mysql> CREATE TABLE emps (name varchar(20), id int(5));
 Query OK, 0 rows affected (0.06 sec)
 
+    
 mysql> DROP TABLE emps;
 Query OK, 0 rows affected (0.00 sec)
 
+    
 mysql> SHOW TABLES;
 +---------------------+
 | Tables_in_te31301db |
@@ -365,6 +396,7 @@ mysql> SHOW TABLES;
 +---------------------+
 8 rows in set (0.00 sec)
 
+    
 mysql> SELECT* FROM emp_view;
 +--------+-----------+-----------+---------------+---------+-----------------+---------------+------------+
 | emp_id | emp_fname | emp_lname | emp_birthdate | dept_id | dept_name       | emp_position  | emp_salary |
@@ -382,6 +414,7 @@ mysql> SELECT* FROM emp_view;
 +--------+-----------+-----------+---------------+---------+-----------------+---------------+------------+
 10 rows in set (0.01 sec)
 
+    
 mysql> SELECT* FROM emp_view WHERE dept_name IN ('Computer', 'IT') AND emp_fname LIKE "P%" OR "H%";
 +--------+-----------+-----------+---------------+---------+-----------+--------------+------------+
 | emp_id | emp_fname | emp_lname | emp_birthdate | dept_id | dept_name | emp_position | emp_salary |
@@ -390,6 +423,7 @@ mysql> SELECT* FROM emp_view WHERE dept_name IN ('Computer', 'IT') AND emp_fname
 +--------+-----------+-----------+---------------+---------+-----------+--------------+------------+
 1 row in set, 4 warnings (0.00 sec)
 
+    
 mysql> SELECT DISTINCT emp_position FROM emp_view;
 +---------------+
 | emp_position  |
@@ -406,12 +440,14 @@ mysql> SELECT DISTINCT emp_position FROM emp_view;
 +---------------+
 9 rows in set (0.00 sec)
 
+    
 mysql> update emp_view 
     -> set emp_salary = emp_salary*1.1 
     -> where year(emp_birthdate) < '1985';
 Query OK, 4 rows affected (0.01 sec)
 Rows matched: 4  Changed: 4  Warnings: 0
 
+    
 mysql> select* from emp_view;
 +--------+-----------+-----------+---------------+---------+-----------------+---------------+------------+
 | emp_id | emp_fname | emp_lname | emp_birthdate | dept_id | dept_name       | emp_position  | emp_salary |
@@ -429,6 +465,7 @@ mysql> select* from emp_view;
 +--------+-----------+-----------+---------------+---------+-----------------+---------------+------------+
 10 rows in set (0.00 sec)
 
+    
 mysql> alter table project 
     -> add foreign key(dept_id) 
     -> references department(dept_id) 
@@ -436,6 +473,7 @@ mysql> alter table project
 Query OK, 7 rows affected (0.07 sec)
 Records: 7  Duplicates: 0  Warnings: 0
 
+    
 mysql> alter table employee 
     -> add foreign key(dept_id) 
     -> references department(dept_id) 
@@ -443,9 +481,11 @@ mysql> alter table employee
 Query OK, 10 rows affected (0.09 sec)
 Records: 10  Duplicates: 0  Warnings: 0
 
+    
 mysql> delete from department where dept_location='Mumbai';
 Query OK, 1 row affected (0.01 sec)
 
+    
 mysql> select* from emp_view;
 +--------+-----------+-----------+---------------+---------+-----------------+---------------+------------+
 | emp_id | emp_fname | emp_lname | emp_birthdate | dept_id | dept_name       | emp_position  | emp_salary |
@@ -461,6 +501,7 @@ mysql> select* from emp_view;
 +--------+-----------+-----------+---------------+---------+-----------------+---------------+------------+
 8 rows in set (0.01 sec)
 
+    
 mysql> select proj_name from project where proj_location='Pune';
 +-----------------+
 | proj_name       |
@@ -470,6 +511,7 @@ mysql> select proj_name from project where proj_location='Pune';
 +-----------------+
 2 rows in set (0.00 sec)
 
+    
 mysql> select proj_name, proj_cost from project where proj_cost between 100000 and 500000;
 +------------------+-----------+
 | proj_name        | proj_cost |
@@ -483,6 +525,7 @@ mysql> select proj_name, proj_cost from project where proj_cost between 100000 a
 +------------------+-----------+
 6 rows in set (0.00 sec)
 
+    
 mysql> select proj_name, proj_cost from project where proj_cost = (select max(proj_cost) from project);
 +-----------------+-----------+
 | proj_name       | proj_cost |
@@ -491,6 +534,7 @@ mysql> select proj_name, proj_cost from project where proj_cost = (select max(pr
 +-----------------+-----------+
 1 row in set (0.00 sec)
 
+    
 mysql> select avg(proj_cost) as average_cost from project;
 +---------------+
 | average_cost  |
@@ -499,6 +543,7 @@ mysql> select avg(proj_cost) as average_cost from project;
 +---------------+
 1 row in set (0.00 sec)
 
+    
 mysql> select emp_id, emp_fname, emp_lname from employee order by emp_lname desc;
 +--------+-----------+-----------+
 | emp_id | emp_fname | emp_lname |
@@ -514,6 +559,7 @@ mysql> select emp_id, emp_fname, emp_lname from employee order by emp_lname desc
 +--------+-----------+-----------+
 8 rows in set (0.00 sec)
 
+    
 mysql> select proj_name, proj_location, proj_cost from project where proj_year in ('2004', '2005', '2007'); 
 +------------------+---------------+-----------+
 | proj_name        | proj_location | proj_cost |
@@ -525,22 +571,26 @@ mysql> select proj_name, proj_location, proj_cost from project where proj_year i
 +------------------+---------------+-----------+
 4 rows in set (0.00 sec)
 
+    
 mysql> drop index emp_index on employee;
 Query OK, 0 rows affected (0.07 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
+    
 mysql> CREATE INDEX emp_index on employee(emp_fname);
 Query OK, 0 rows affected (0.10 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
+    
 mysql> drop index emp_index on employee;
 Query OK, 0 rows affected (0.06 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
+    
 mysql> create index emp_index on employee(emp_fname asc);
 Query OK, 0 rows affected (0.07 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
+    
 mysql> commit;
 Query OK, 0 rows affected (0.00 sec)
-
