@@ -150,3 +150,8 @@ mysql> select * from result;
 |    4 | Kyle  | Distinction  |
 +------+-------+--------------+
 4 rows in set (0.00 sec)
+
+
+-- Error Handling
+mysql> call classify (10, 'hello', -40);
+ERROR 1644 (45000): INVALID MARKS!
