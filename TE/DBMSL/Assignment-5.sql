@@ -1,4 +1,6 @@
-﻿mysql> create table stud_marks (name varchar(20), marks int);
+-- Student Classification Based on Marks
+
+mysql> create table stud_marks (name varchar(20), marks int);
 Query OK, 0 rows affected (0.05 sec)
 
 mysql> desc stud_marks;
