@@ -194,38 +194,59 @@ public class Main {
 
     void printAll() throws Exception
     {
-        System.out.println("***** MNT *****");
+        System.out.println("MNT:");
+        System.out.println("-------------");
         System.out.println("Index | Name");
+        System.out.println("-------------");
         for (int i=0; i<mntp; i++)
         {
-            System.out.println(mnt[i].index + "   " + mnt[i].mName);
+            System.out.println(mnt[i].index + "       " + mnt[i].mName);
         }
+        System.out.println("-------------");
+        System.out.println();
+        System.out.println();
 
-        System.out.println("***** MDT *****");
+
+        System.out.println("MDT:");
+        System.out.println("------------------");
         for (int i=0; i<mdtp; i++)
         {
             System.out.println(mdt[i]);
         }
+        System.out.println("------------------");
+        System.out.println();
+        System.out.println();
 
-        System.out.println("***** KPDTAB *****");
-        System.out.println("Arg | Default Value");
+
+        System.out.println("KPDTAB:");
+        System.out.println("-------------------------");
+        System.out.println("Argument | Default Value");
+        System.out.println("-------------------------");
         for (int i=0; i<kpdtp; i++)
         {
-            System.out.println(kpdt[i].argName + "   " + kpdt[i].def);
+            System.out.println(kpdt[i].argName + "         " + kpdt[i].def);
         }
+        System.out.println("-------------------------");
+        System.out.println();
+        System.out.println();
 
-        System.out.println("***** APTAB *****");
+
+        System.out.println("APTAB:");
+        System.out.println("----------------");
         System.out.println("Formal | Actual");
+        System.out.println("----------------");
         for (int i=0; i<aptp; i++)
         {
-            System.out.println(apt[i].arg + "   " + apt[i].actual);
+            System.out.println(apt[i].arg + "       " + apt[i].actual);
         }
+        System.out.println("----------------");
+        System.out.println();
     }
 
 
     void pass2() throws Exception
     {
-        File inputFile = new File("pass1_output.txt.txt");
+        File inputFile = new File("pass1_output.txt");
         BufferedReader br = new BufferedReader(new FileReader(inputFile));
         FileWriter fw = new FileWriter("pass2_output.txt");
 
@@ -309,33 +330,55 @@ public class Main {
 
     void print_APT_KPDT()
     {
-        System.out.println("***** KPDTAB *****");
-        System.out.println("Arg | Default Value");
+        System.out.println("MDT");
+        System.out.println("------------------");
+        for (int i=0; i<mdtp; i++)
+        {
+            System.out.println(mdt[i]);
+        }
+        System.out.println("------------------");
+        System.out.println();
+        System.out.println();
+
+
+        System.out.println("KPDTAB:");
+        System.out.println("-------------------------");
+        System.out.println("Argument | Default Value");
+        System.out.println("-------------------------");
         for (int i=0; i<kpdtp; i++)
         {
-            System.out.println(kpdt[i].argName + "   " + kpdt[i].def);
+            System.out.println(kpdt[i].argName + "         " + kpdt[i].def);
         }
+        System.out.println("-------------------------");
+        System.out.println();
+        System.out.println();
 
-        System.out.println("***** APTAB *****");
+
+        System.out.println("APTAB:");
+        System.out.println("----------------");
         System.out.println("Formal | Actual");
+        System.out.println("----------------");
         for (int i=0; i<aptp; i++)
         {
-            System.out.println(apt[i].arg + "   " + apt[i].actual);
+            System.out.println(apt[i].arg + "       " + apt[i].actual);
         }
+        System.out.println("----------------");
+        System.out.println();
     }
 
 
     public static void main(String[] args) throws Exception {
         Main obj = new Main();
-        System.out.println("----------------------------");
-        System.out.println(" MACRO PROCESSOR PASS - 1");
-        System.out.println("----------------------------");
+        System.out.println();
+        System.out.println("*** MACRO PROCESSOR PASS-1 ***");
+        System.out.println();
         obj.pass1();
         obj.printAll();
+        
+        System.out.println();
 
-        System.out.println("----------------------------");
-        System.out.println(" MACRO PROCESSOR PASS - 2");
-        System.out.println("----------------------------");
+        System.out.println("*** MACRO PROCESSOR PASS-2 ***");
+        System.out.println();
         obj.pass2();
         obj.print_APT_KPDT();
     }
