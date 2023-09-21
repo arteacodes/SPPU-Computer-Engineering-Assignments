@@ -1,62 +1,87 @@
-// A Java program for a Server
-import java.net.*;
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Scanner;
 
-public class Server
+
+public class Server implements Runnable
 {
-	//initialize socket and input stream
-	private Socket		 socket = null;
-	private ServerSocket server = null;
-	private DataInputStream in	 = null;
+    int id;
+    Socket csocket;
+    
+    Server(Socket csocket, int id) {
+        this.id = id;
+        this.csocket = csocket;
+    }
 
-	// constructor with port
-	public Server(int port)
-	{
-		// starts server and waits for a connection
-		try
-		{
-			server = new ServerSocket(port);
-			System.out.println("Server started");
+    public void run() {
+        System.out.println("Client with Id= " + id + " connected");
+        DataInputStream input=null;
+        
+        try {
+            input = new DataInputStream(csocket.getInputStream());
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
+     
+        DataOutputStream output=null;
+        
+        try {
+            output = new DataOutputStream(csocket.getOutputStream());
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
+     
+        while(true) {
+            try {
+                output.writeUTF(input.readUTF());
+            }
+            catch (IOException e) {
+                System.out.println("Client with Id= " + id + " exited");
+            return;    
+            }
+        }
+    }
 
-			System.out.println("Waiting for a client ...");
-
-			socket = server.accept();
-			System.out.println("Client accepted");
-
-			// takes input from the client socket
-			in = new DataInputStream(
-				new BufferedInputStream(socket.getInputStream()));
-
-			String line = "";
-
-			// reads message from client until "Over" is sent
-			while (!line.equals("Over"))
-			{
-				try
-				{
-					line = in.readUTF();
-					System.out.println(line);
-
-				}
-				catch(IOException i)
-				{
-					System.out.println(i);
-				}
-			}
-			System.out.println("Closing connection");
-
-			// close connection
-			socket.close();
-			in.close();
-		}
-		catch(IOException i)
-		{
-			System.out.println(i);
-		}
-	}
-
-	public static void main(String args[])
-	{
-		Server server = new Server(5000);
-	}
+    public static void main(String[] args) {
+        int id = 1;
+        Scanner sc = new Scanner(System.in);
+        int pno;
+    
+        System.out.println("This is the Server Program");
+        System.out.println("Enter the port number");
+        pno=sc.nextInt();
+  
+        System.out.println("Attempting to create the server socket");
+        ServerSocket MyService=null;
+    
+        try {
+            MyService = new ServerSocket(pno);
+            System.out.println("Server Socket Created Successfully");
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
+    
+        System.out.println("Waiting for client");
+  
+        while (true) {
+            Socket sock=null;
+        
+            try {
+                sock = MyService.accept();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+            System.out.println("Connected to a new Client");
+            new Thread(new Server(sock,id++)).start();
+        }    
+    }
 }
