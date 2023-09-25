@@ -1,7 +1,6 @@
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
@@ -18,8 +17,8 @@ public class Server implements Runnable
     }
 
     public void run() {
-        System.out.println("Client with Id= " + id + " connected");
-        DataInputStream input=null;
+        System.out.println("Client with ID = " + id + " connected.");
+        DataInputStream input = null;
         
         try {
             input = new DataInputStream(csocket.getInputStream());
@@ -28,7 +27,7 @@ public class Server implements Runnable
             System.out.println(e);
         }
      
-        DataOutputStream output=null;
+        DataOutputStream output = null;
         
         try {
             output = new DataOutputStream(csocket.getOutputStream());
@@ -42,7 +41,7 @@ public class Server implements Runnable
                 output.writeUTF(input.readUTF());
             }
             catch (IOException e) {
-                System.out.println("Client with Id= " + id + " exited");
+                System.out.println("Client with ID = " + id + " exited.");
             return;    
             }
         }
@@ -53,25 +52,27 @@ public class Server implements Runnable
         Scanner sc = new Scanner(System.in);
         int pno;
     
-        System.out.println("This is the Server Program");
-        System.out.println("Enter the port number");
-        pno=sc.nextInt();
+        System.out.println("This is the Server Program.");
+        System.out.println("Enter the port number: ");
+        pno = sc.nextInt();
   
-        System.out.println("Attempting to create the server socket");
-        ServerSocket MyService=null;
+        System.out.println("\nAttempting to create the Server Socket...");
+        ServerSocket MyService = null;
     
         try {
             MyService = new ServerSocket(pno);
-            System.out.println("Server Socket Created Successfully");
+            System.out.println("Server Socket created successfully!");
         }
         catch (IOException e) {
             System.out.println(e);
         }
     
-        System.out.println("Waiting for client");
-  
+        System.out.println("\nWaiting for client...");
+        
+        sc.close();
+
         while (true) {
-            Socket sock=null;
+            Socket sock = null;
         
             try {
                 sock = MyService.accept();
@@ -80,8 +81,8 @@ public class Server implements Runnable
                 e.printStackTrace();
             }
             
-            System.out.println("Connected to a new Client");
-            new Thread(new Server(sock,id++)).start();
-        }    
+            System.out.println("\nConnected to a new Client.");
+            new Thread(new Server(sock, id++)).start();
+        }
     }
 }
