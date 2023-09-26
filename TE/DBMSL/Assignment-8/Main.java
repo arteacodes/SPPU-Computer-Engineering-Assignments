@@ -31,7 +31,7 @@ public class Main
             ResultSet rs = st.executeQuery(query);
             
             while (rs.next()) {
-            	// indexing starts 1 & 2
+            	// indexing starts from 1
             	String output = rs.getInt(1) + " " + rs.getString(2);
                 System.out.println(output);
             }
