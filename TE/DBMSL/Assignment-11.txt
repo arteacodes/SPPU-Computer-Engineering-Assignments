@@ -1,0 +1,152 @@
+> db.createCollection('order')
+{ "ok" : 1 }
+
+> db.order.insertMany([{Customer_id:'A1',Amount:400,Status:'P'},{Customer_id:'B1',Amount:300,Status:'D'},{Customer_id:'A1',Amount:200,Status:'F'},{Customer_id:'C1',Amount:200,Status:'F'},{Customer_id:'B1',Amount:700,Status:'P'},{Customer_id:'B1',Amount:800,Status:'P'}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6539e1d4fef9a5835951fda3"),
+                ObjectId("6539e1d4fef9a5835951fda4"),
+                ObjectId("6539e1d4fef9a5835951fda5"),
+                ObjectId("6539e1d4fef9a5835951fda6"),
+                ObjectId("6539e1d4fef9a5835951fda7"),
+                ObjectId("6539e1d4fef9a5835951fda8")
+        ]
+}
+
+> db.order.insertMany([{Customer_id:'A1',Amount:700,Status:'D'},{Customer_id:'B1',Amount:1200,Status:'D'},{Customer_id:'C1',Amount:150,Status:'D'},{Customer_id:'C1',Amount:845,Status:'F'},{Customer_id:'A1',Amount:800,Status:'P'},{Customer_id:'A1',Amount:550,Status:'D'},{Customer_id:'B1',Amount:780,Status:'F'},{Customer_id:'C1',Amount:1500,Status:'D'}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6539e22c880c7aa6b2eae932"),
+                ObjectId("6539e22c880c7aa6b2eae933"),
+                ObjectId("6539e22c880c7aa6b2eae934"),
+                ObjectId("6539e22c880c7aa6b2eae935"),
+                ObjectId("6539e22c880c7aa6b2eae936"),
+                ObjectId("6539e22c880c7aa6b2eae937"),
+                ObjectId("6539e22c880c7aa6b2eae938"),
+                ObjectId("6539e22c880c7aa6b2eae939")
+        ]
+}
+> db.order.find();                                                                                                                         
+{ "_id" : ObjectId("6539e1d4fef9a5835951fda3"), "Customer_id" : "A1", "Amount" : 400, "Status" : "P" }
+{ "_id" : ObjectId("6539e1d4fef9a5835951fda4"), "Customer_id" : "B1", "Amount" : 300, "Status" : "D" }
+{ "_id" : ObjectId("6539e1d4fef9a5835951fda5"), "Customer_id" : "A1", "Amount" : 200, "Status" : "F" }
+{ "_id" : ObjectId("6539e1d4fef9a5835951fda6"), "Customer_id" : "C1", "Amount" : 200, "Status" : "F" }
+{ "_id" : ObjectId("6539e1d4fef9a5835951fda7"), "Customer_id" : "B1", "Amount" : 700, "Status" : "P" }
+{ "_id" : ObjectId("6539e1d4fef9a5835951fda8"), "Customer_id" : "B1", "Amount" : 800, "Status" : "P" }
+{ "_id" : ObjectId("6539e22c880c7aa6b2eae932"), "Customer_id" : "A1", "Amount" : 700, "Status" : "D" }
+{ "_id" : ObjectId("6539e22c880c7aa6b2eae933"), "Customer_id" : "B1", "Amount" : 1200, "Status" : "D" }
+{ "_id" : ObjectId("6539e22c880c7aa6b2eae934"), "Customer_id" : "C1", "Amount" : 150, "Status" : "D" }
+{ "_id" : ObjectId("6539e22c880c7aa6b2eae935"), "Customer_id" : "C1", "Amount" : 845, "Status" : "F" }
+{ "_id" : ObjectId("6539e22c880c7aa6b2eae936"), "Customer_id" : "A1", "Amount" : 800, "Status" : "P" }
+{ "_id" : ObjectId("6539e22c880c7aa6b2eae937"), "Customer_id" : "A1", "Amount" : 550, "Status" : "D" }
+{ "_id" : ObjectId("6539e22c880c7aa6b2eae938"), "Customer_id" : "B1", "Amount" : 780, "Status" : "F" }
+{ "_id" : ObjectId("6539e22c880c7aa6b2eae939"), "Customer_id" : "C1", "Amount" : 1500, "Status" : "D" }
+> db.order.find().pretty()                                                                                                                 
+{
+        "_id" : ObjectId("6539e1d4fef9a5835951fda3"),
+        "Customer_id" : "A1",
+        "Amount" : 400,
+        "Status" : "P"
+}
+{
+        "_id" : ObjectId("6539e1d4fef9a5835951fda4"),
+        "Customer_id" : "B1",
+        "Amount" : 300,
+        "Status" : "D"
+}
+{
+        "_id" : ObjectId("6539e1d4fef9a5835951fda5"),
+        "Customer_id" : "A1",
+        "Amount" : 200,
+        "Status" : "F"
+}
+{
+        "_id" : ObjectId("6539e1d4fef9a5835951fda6"),
+        "Customer_id" : "C1",
+        "Amount" : 200,
+        "Status" : "F"
+}
+{
+        "_id" : ObjectId("6539e1d4fef9a5835951fda7"),
+        "Customer_id" : "B1",
+        "Amount" : 700,
+        "Status" : "P"
+}
+{
+        "_id" : ObjectId("6539e1d4fef9a5835951fda8"),
+        "Customer_id" : "B1",
+        "Amount" : 800,
+        "Status" : "P"
+}
+{
+        "_id" : ObjectId("6539e22c880c7aa6b2eae932"),
+        "Customer_id" : "A1",
+        "Amount" : 700,
+        "Status" : "D"
+}
+{
+        "_id" : ObjectId("6539e22c880c7aa6b2eae933"),
+        "Customer_id" : "B1",
+        "Amount" : 1200,
+        "Status" : "D"
+}
+{
+        "_id" : ObjectId("6539e22c880c7aa6b2eae934"),
+        "Customer_id" : "C1",
+        "Amount" : 150,
+        "Status" : "D"
+}
+{
+        "_id" : ObjectId("6539e22c880c7aa6b2eae935"),
+        "Customer_id" : "C1",
+        "Amount" : 845,
+        "Status" : "F"
+}
+{
+        "_id" : ObjectId("6539e22c880c7aa6b2eae936"),
+        "Customer_id" : "A1",
+        "Amount" : 800,
+        "Status" : "P"
+}
+{
+        "_id" : ObjectId("6539e22c880c7aa6b2eae937"),
+        "Customer_id" : "A1",
+        "Amount" : 550,
+        "Status" : "D"
+}
+{
+        "_id" : ObjectId("6539e22c880c7aa6b2eae938"),
+        "Customer_id" : "B1",
+        "Amount" : 780,
+        "Status" : "F"
+}
+{
+        "_id" : ObjectId("6539e22c880c7aa6b2eae939"),
+        "Customer_id" : "C1",
+        "Amount" : 1500,
+        "Status" : "D"
+}
+> var mapfunction = function()                                                                                                             
+2023-10-26T09:22:48.657+0530 E QUERY    [js] SyntaxError: expected expression, got end of script @(shell):1:28
+> var mapfunction = function() { if (this.Status == 'D') emit (this.Customer_id, this.Amount)};                                            
+> var reducefunction = function(key, values) { return Array.sum(values); };                                                                
+> db.order.mapReduce(mapfunction, reducefunction, {out: deliveredOrders})                                                                  
+2023-10-26T09:31:14.389+0530 E QUERY    [js] ReferenceError: deliveredOrders is not defined :
+@(shell):1:50
+> db.order.mapReduce(mapfunction, reducefunction, {out: 'deliveredOrders'})                                                                
+{ "result" : "deliveredOrders", "ok" : 1 }
+> db.deliveredOrders.find()                                                                                                                
+{ "_id" : "A1", "value" : 1250 }
+{ "_id" : "B1", "value" : 1500 }
+{ "_id" : "C1", "value" : 1650 }
+
+> var mapfunc = function() { emit(this.Customer_id, this.Amount) }; 
+> var reducefunc = function(key, values) { return Math.min.apply(Math, values);};                                                          
+> db.order.mapReduce(mapfunc, reducefunc, {out: 'minOrder'})                                                                                                                                      
+{ "result" : "minOrder", "ok" : 1 }
+> db.minOrder.find()                                                                                                                       
+{ "_id" : "B1", "value" : 300 }
+{ "_id" : "A1", "value" : 200 }
+{ "_id" : "C1", "value" : 150 }

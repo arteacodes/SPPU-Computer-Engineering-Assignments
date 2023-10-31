@@ -1,0 +1,154 @@
+﻿> use te31301db
+switched to db te31301db
+
+
+> db.createCollection("student")
+{ "ok" : 1 }
+> db.student.insertOne({rollno: 1, name: {fname: "Aarti", lname: "Lad"}, branch: "CS", city: "Pune", gpa: 9.9})
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("652e2bc8b93804dd9b5fc729")
+}
+
+
+> db.student.insertMany([{rollno: 2, name: {fname: "Akshata", lname: "Madane"}, branch: "IT", city: "Mumbai", gpa: 9.6}, {rollno: 3, name: {fname: "Suma", lname: "Gadepalli"}, branch: "ENTC", city: "Hyderabad", gpa: 9.7}])
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("652e2d18b93804dd9b5fc72a"),
+		ObjectId("652e2d18b93804dd9b5fc72b")
+	]
+}
+
+
+> db.student.find()
+{ "_id" : ObjectId("652e2bc8b93804dd9b5fc729"), "rollno" : 1, "name" : { "fname" : "Aarti", "lname" : "Lad" }, "branch" : "CS", "city" : "Pune", "gpa" : 9.9 }
+{ "_id" : ObjectId("652e2d18b93804dd9b5fc72a"), "rollno" : 2, "name" : { "fname" : "Akshata", "lname" : "Madane" }, "branch" : "IT", "city" : "Mumbai", "gpa" : 9.6 }
+{ "_id" : ObjectId("652e2d18b93804dd9b5fc72b"), "rollno" : 3, "name" : { "fname" : "Suma", "lname" : "Gadepalli" }, "branch" : "ENTC", "city" : "Hyderabad", "gpa" : 9.7 }
+
+> db.student.insertMany([{rollno: 4, name: {fname: "Saniya", lname: "Atalatti"}, branch: "CS", city: "Kolkata", gpa: 9.3}, 
+... {rollno: 5, name: {fname: "Shlok", lname: "Belgamwar"}, branch: "ENTC", city: "Ahmedabad", gpa: 9.1},
+... {rollno: 6, name: {fname: "Joel", lname: "Alphonso"}, branch: "IT", city: "Chennai", gpa: 9.2},
+... {rollno: 7, name: {fname: "Saanvi", lname: "Pathak"}, branch: "CS", city: "Indore", gpa: 9.4}])
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("6530a5313f9ddd4ae4c14618"),
+		ObjectId("6530a5313f9ddd4ae4c14619"),
+		ObjectId("6530a5313f9ddd4ae4c1461a"),
+		ObjectId("6530a5313f9ddd4ae4c1461b")
+	]
+}
+
+> db.student.find()
+{ "_id" : ObjectId("652e2bc8b93804dd9b5fc729"), "rollno" : 1, "name" : { "fname" : "Aarti", "lname" : "Lad" }, "branch" : "CS", "city" : "Pune", "gpa" : 9.9 }
+{ "_id" : ObjectId("652e2d18b93804dd9b5fc72a"), "rollno" : 2, "name" : { "fname" : "Akshata", "lname" : "Madane" }, "branch" : "IT", "city" : "Mumbai", "gpa" : 9.6 }
+{ "_id" : ObjectId("652e2d18b93804dd9b5fc72b"), "rollno" : 3, "name" : { "fname" : "Suma", "lname" : "Gadepalli" }, "branch" : "ENTC", "city" : "Hyderabad", "gpa" : 9.7 }
+{ "_id" : ObjectId("6530a5313f9ddd4ae4c14618"), "rollno" : 4, "name" : { "fname" : "Saniya", "lname" : "Atalatti" }, "branch" : "CS", "city" : "Kolkata", "gpa" : 9.3 }
+{ "_id" : ObjectId("6530a5313f9ddd4ae4c14619"), "rollno" : 5, "name" : { "fname" : "Shlok", "lname" : "Belgamwar" }, "branch" : "ENTC", "city" : "Ahmedabad", "gpa" : 9.1 }
+{ "_id" : ObjectId("6530a5313f9ddd4ae4c1461a"), "rollno" : 6, "name" : { "fname" : "Joel", "lname" : "Alphonso" }, "branch" : "IT", "city" : "Chennai", "gpa" : 9.2 }
+{ "_id" : ObjectId("6530a5313f9ddd4ae4c1461b"), "rollno" : 7, "name" : { "fname" : "Saanvi", "lname" : "Pathak" }, "branch" : "CS", "city" : "Indore", "gpa" : 9.4 }
+
+
+> db.student.update({rollno: 7}, {$set: {"name.fname": "Atharva"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.find()
+{ "_id" : ObjectId("652e2bc8b93804dd9b5fc729"), "rollno" : 1, "name" : { "fname" : "Aarti", "lname" : "Lad" }, "branch" : "CS", "city" : "Pune", "gpa" : 9.9 }
+{ "_id" : ObjectId("652e2d18b93804dd9b5fc72a"), "rollno" : 2, "name" : { "fname" : "Akshata", "lname" : "Madane" }, "branch" : "IT", "city" : "Mumbai", "gpa" : 9.6 }
+{ "_id" : ObjectId("652e2d18b93804dd9b5fc72b"), "rollno" : 3, "name" : { "fname" : "Suma", "lname" : "Gadepalli" }, "branch" : "ENTC", "city" : "Hyderabad", "gpa" : 9.7 }
+{ "_id" : ObjectId("6530a5313f9ddd4ae4c14618"), "rollno" : 4, "name" : { "fname" : "Saniya", "lname" : "Atalatti" }, "branch" : "CS", "city" : "Kolkata", "gpa" : 9.3 }
+{ "_id" : ObjectId("6530a5313f9ddd4ae4c14619"), "rollno" : 5, "name" : { "fname" : "Shlok", "lname" : "Belgamwar" }, "branch" : "ENTC", "city" : "Ahmedabad", "gpa" : 9.1 }
+{ "_id" : ObjectId("6530a5313f9ddd4ae4c1461a"), "rollno" : 6, "name" : { "fname" : "Joel", "lname" : "Alphonso" }, "branch" : "IT", "city" : "Chennai", "gpa" : 9.2 }
+{ "_id" : ObjectId("6530a5313f9ddd4ae4c1461b"), "rollno" : 7, "name" : { "fname" : "Atharva", "lname" : "Pathak" }, "branch" : "CS", "city" : "Indore", "gpa" : 9.4 }
+> db.student.find().pretty()
+{
+	"_id" : ObjectId("652e2bc8b93804dd9b5fc729"),
+	"rollno" : 1,
+	"name" : {
+		"fname" : "Aarti",
+		"lname" : "Lad"
+	},
+	"branch" : "CS",
+	"city" : "Pune",
+	"gpa" : 9.9
+}
+{
+	"_id" : ObjectId("652e2d18b93804dd9b5fc72a"),
+	"rollno" : 2,
+	"name" : {
+		"fname" : "Akshata",
+		"lname" : "Madane"
+	},
+	"branch" : "IT",
+	"city" : "Mumbai",
+	"gpa" : 9.6
+}
+{
+	"_id" : ObjectId("652e2d18b93804dd9b5fc72b"),
+	"rollno" : 3,
+	"name" : {
+		"fname" : "Suma",
+		"lname" : "Gadepalli"
+	},
+	"branch" : "ENTC",
+	"city" : "Hyderabad",
+	"gpa" : 9.7
+}
+{
+	"_id" : ObjectId("6530a5313f9ddd4ae4c14618"),
+	"rollno" : 4,
+	"name" : {
+		"fname" : "Saniya",
+		"lname" : "Atalatti"
+	},
+	"branch" : "CS",
+	"city" : "Kolkata",
+	"gpa" : 9.3
+}
+{
+	"_id" : ObjectId("6530a5313f9ddd4ae4c14619"),
+	"rollno" : 5,
+	"name" : {
+		"fname" : "Shlok",
+		"lname" : "Belgamwar"
+	},
+	"branch" : "ENTC",
+	"city" : "Ahmedabad",
+	"gpa" : 9.1
+}
+{
+	"_id" : ObjectId("6530a5313f9ddd4ae4c1461a"),
+	"rollno" : 6,
+	"name" : {
+		"fname" : "Joel",
+		"lname" : "Alphonso"
+	},
+	"branch" : "IT",
+	"city" : "Chennai",
+	"gpa" : 9.2
+}
+{
+	"_id" : ObjectId("6530a5313f9ddd4ae4c1461b"),
+	"rollno" : 7,
+	"name" : {
+		"fname" : "Atharva",
+		"lname" : "Pathak"
+	},
+	"branch" : "CS",
+	"city" : "Indore",
+	"gpa" : 9.4
+}
+
+
+> db.Student.find({$and:[{"branch":"CS"}, {"rollno":1}]}).pretty();
+{
+	"_id" : ObjectId("652e2bc8b93804dd9b5fc729"),
+	"rollno" : 1,
+	"name" : {
+		"fname" : "Aarti",
+		"lname" : "Lad"
+	},
+	"branch" : "CS",
+	"city" : "Pune",
+	"gpa" : 9.9
+}
