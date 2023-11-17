@@ -6,7 +6,7 @@ tab = "\t"
 newline = "\n"
 
 class Mnemonics:
-
+ 
     # constructor with all the opcodes
     def __init__(self):
         self.AD = {"START": 1,
@@ -81,12 +81,12 @@ class Pass1:
         self.litTab = {}
         self.poolTab = [0]  # default entry for 1st literal pool
         self.litIndex = 0  # literal table index (for appending)
-        self.litPtr = 0  # literal table pointer
+        self.litPtr = 0  # literal table pointer (for tracking processed literals)
         self.LC = 0  # location counter
         self.IC = []
 
         # files
-        self.inputFile = open("test-case-1.txt", "r")
+        self.inputFile = open("input.txt", "r")
         self.litTabFile = open("literalTable.txt","w")
         self.symTabFile = open("symbolTable.txt","w")
         self.poolTabFile = open("poolTable.txt","w")
@@ -96,7 +96,7 @@ class Pass1:
     # calculates and returns location for ORIGIN 
     def location(self, string):
         if "+" in string:
-            string = string.split("+")
+            string = string.split("+")  #  eg. [LOOP, 2] for LOOP+2
             return self.symTab[string[0]] + int(string[1])
         elif "-" in string:
             string = string.split("-")
@@ -122,7 +122,7 @@ class Pass1:
 
 
             # for labels
-            if label != "":
+            if label:
                 self.symTab[label] = self.LC  # set label, location
 
 
@@ -277,7 +277,7 @@ class Pass1:
             self.litTabFile.write(line)
         self.litTabFile.close()
         print()
-
+ 
 
     def printPT(self):
         print("\n--------------------")
