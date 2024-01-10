@@ -121,3 +121,10 @@ def get_user_input():
 start, stop, graph, heuristic = get_user_input()
 astar = AStarAlgorithm(start, stop, graph, heuristic)
 astar.run_algorithm()
+
+
+# SAMPLE INPUT
+# Enter the number of nodes in the graph: 6
+# Enter the node: A
+# Enter neighbors and their weights (comma-separated): B:2, C:3
+# ...
