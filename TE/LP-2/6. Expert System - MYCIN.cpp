@@ -63,14 +63,6 @@ bool diagnoseAppendicitis() {
     return (severeAbdominalPain && lossOfAppetite);
 }
 
-// Function to diagnose gastroenteritis
-bool diagnoseGastroenteritis() {
-    bool diarrhea = askQuestion("Do you have diarrhea?");
-    bool vomiting = askQuestion("Have you been vomiting?");
-    bool abdominalPain = askQuestion("Do you have abdominal pain?");
-    return (diarrhea && vomiting && abdominalPain);
-}
-
 int main() {
     cout << "Welcome to the Expert System for Medical Diagnosis\n";
 
@@ -88,7 +80,6 @@ int main() {
 
     bool hasAppendicitis = diagnoseAppendicitis();
 
-    bool hasGastroenteritis = diagnoseGastroenteritis();
 
     // Output diagnosis
     cout << "\nDiagnosis:\n";
@@ -106,7 +97,7 @@ int main() {
         cout << "You may have flu.\n";
     }
     if (hasStrepThroat) {
-        cout << "You may have strep throat.\n";
+        cout << "You may have a throat infection.\n";
     }
     if (hasFoodPoisoning) {
         cout << "You may have food poisoning.\n";
@@ -114,12 +105,9 @@ int main() {
     if (hasAppendicitis) {
         cout << "You may have appendicitis.\n";
     }
-    if (hasGastroenteritis) {
-        cout << "You may have gastroenteritis.\n";
-    }
 
     // If none of the conditions are met
-    if (!hasAllergies && !hasFever && !hasCold && !hasFlu && !hasStrepThroat && !hasFoodPoisoning && !hasAppendicitis && !hasGastroenteritis) {
+    if (!hasAllergies && !hasFever && !hasCold && !hasFlu && !hasStrepThroat && !hasFoodPoisoning && !hasAppendicitis) {
         cout << "No specific diagnosis could be made based on the provided symptoms.\n";
     }
 
