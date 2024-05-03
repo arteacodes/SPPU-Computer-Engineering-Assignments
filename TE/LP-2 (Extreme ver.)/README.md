@@ -2,7 +2,7 @@
 
 ### Artificial Intelligence
 
-1. Implement Depth First Search algorithm and Breadth First Search algorithm. Use an an application for undirected graph and develop a recursive algorithm for searching all the vertices of a graph or tree data structure. Also print the levels as it traverses for both algorithms.
+1. Implement Depth First Search algorithm and Breadth First Search algorithm. Use an application for undirected graph and develop a recursive algorithm for searching all the vertices of a graph or tree data structure. Also print the levels as it traverses for both algorithms.
 
 2. Implement A* algorithm for any game search problem.
 
