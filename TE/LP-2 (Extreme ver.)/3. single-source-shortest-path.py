@@ -1,5 +1,5 @@
 """
-This code implements Bellman-Ford algorithm for Single-Source Shortest Path Problem (SSSP) applied on a college map.
+This code implements Bellman-Ford algorithm for Single-Source Shortest Path Problem (SSSP) applied on a college map using a greedy approach.
 """
 
 class Graph:
