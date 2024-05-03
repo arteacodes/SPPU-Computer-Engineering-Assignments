@@ -10,10 +10,10 @@
    I. Minimum Spanning Tree   OR   <ins>**II. Single-Source Shortest Path Problem**</ins>
 
 4. Implement Greedy Search algorithm on some application for: <br>
-   I. Job Scheduling Problem   OR   <ins>**II. Prim's Minimal Spanning Tree Algorithm**</ins>
+   I. Job Scheduling Problem   OR   <ins>**II. Prim's Minimal Spanning Tree Algorithm
 
 5. Implement Greedy Search algorithm on some application for: <br>
-   I. Kruskal's Minimal Spanning Tree Algorithm   OR   <ins>**II. Dijkstra's Minimal Spanning Tree Algorithm**</ins>
+   <ins>**I. Kruskal's Minimal Spanning Tree Algorithm**</ins>   OR   II. Dijkstra's Minimal Spanning Tree Algorithm**</ins>
 
 6. Implement a solution for a Constraint Satisfaction Problem using Branch-and-Bound and Backtracking for <ins>**N-Queens Problem**</ins> or Graph Coloring Problem.
 
