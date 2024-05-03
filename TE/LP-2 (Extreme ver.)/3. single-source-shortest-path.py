@@ -3,13 +3,16 @@ This code implements Bellman-Ford algorithm for Single-Source Shortest Path Prob
 """
 
 class Graph:
+    
     def __init__(self, vertices):
         self.V = vertices
         self.graph = []
 
+    
     def add_edge(self, u, v, w):
         self.graph.append((u, v, w))
 
+    
     def bellman_ford(self, src):
         dist = {v: float('inf') for v in self.V}  # initial distances set to infinity
         dist[src] = 0  # distance from src to src set to 0
@@ -17,7 +20,8 @@ class Graph:
         # since longest possible path in any graph is V-1
         for _ in range(len(self.V) - 1):
             for u, v, w in self.graph:
-                if dist[u] != float('inf') and dist[u] + w < dist[v]:  # if u is reachable and has a shorter path to it, update distance
+                # if u is reachable and has a shorter path to it, update its distance from src
+                if dist[u] != float('inf') and dist[u] + w < dist[v]:  
                     dist[v] = dist[u] + w
 
         print(f"\nPlace \tDistance from {src}")
@@ -41,5 +45,4 @@ def main():
     g.bellman_ford(source_place)
 
 
-if __name__ == "__main__":
-    main()
+main()
