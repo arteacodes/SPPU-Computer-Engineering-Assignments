@@ -4,24 +4,24 @@
 
 1. Implement Depth First Search algorithm and Breadth First Search algorithm. Use an application for undirected graph and develop a recursive algorithm for searching all the vertices of a graph or tree data structure. Also print the levels as it traverses for both algorithms.
 
-2. Implement A* algorithm for any game search problem. **(8 Tile Puzzle)**
+2. Implement A* algorithm for any game search problem. <ins>**(8 Tile Puzzle)**</ins>
 
 3. Implement Greedy Search algorithm on some application for: <br>
-   I. Minimum Spanning Tree  OR  **II. Single-Source Shortest Path Problem**
+   I. Minimum Spanning Tree   OR   <ins>**II. Single-Source Shortest Path Problem**</ins>
 
 4. Implement Greedy Search algorithm on some application for: <br>
-   I. Job Scheduling Problem  OR  **II. Prim's Minimal Spanning Tree Algorithm**
+   I. Job Scheduling Problem   OR   <ins>**II. Prim's Minimal Spanning Tree Algorithm**</ins>
 
 5. Implement Greedy Search algorithm on some application for: <br>
-   I. Kruskal's Minimal Spanning Tree Algorithm  OR  **II. Dijkstra's Minimal Spanning Tree Algorithm**
+   I. Kruskal's Minimal Spanning Tree Algorithm   OR   <ins>**II. Dijkstra's Minimal Spanning Tree Algorithm**</ins>
 
-6. Implement a solution for a Constraint Satisfaction Problem using Branch-and-Bound and Backtracking for **N-Queens Problem** or Graph Coloring Problem.
+6. Implement a solution for a Constraint Satisfaction Problem using Branch-and-Bound and Backtracking for <ins>**N-Queens Problem**</ins> or Graph Coloring Problem.
 
 7. Develop an elementary chatbot for any suitable customer interaction application.
 
 8. Implement any one of the following Expert System: <br>
    I. Information management
-   **II. Hospitals and medical facilities**
+   <ins>**II. Hospitals and medical facilities**</ins>
    III. Help desks management
    IV. Employee performance evaluation
    V. Stock market trading
