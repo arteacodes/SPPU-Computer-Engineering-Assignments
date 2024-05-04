@@ -10,7 +10,7 @@
    I. Minimum Spanning Tree   OR   <ins>**II. Single-Source Shortest Path Problem**</ins>
 
 4. Implement Greedy Search algorithm on some application for: <br>
-   I. Job Scheduling Problem   OR   <ins>**II. Prim's Minimal Spanning Tree Algorithm
+   I. Job Scheduling Problem   OR   <ins>**II. Prim's Minimal Spanning Tree Algorithm**</ins> 
 
 5. Implement Greedy Search algorithm on some application for: <br>
    <ins>**I. Kruskal's Minimal Spanning Tree Algorithm**</ins>   OR   II. Dijkstra's Minimal Spanning Tree Algorithm
