@@ -31,14 +31,14 @@
 
 ### Cloud Computing
 9. Create the following application in SalesForce.com using Apex Programming Language: <br>
-   I. Mathematical Calculator
+   I. Mathematical Calculator <br>
    II. Student Marksheet Generator
 
 10. Create the following application in SalesForce.com using Apex Programming Language: <br>
 To find the greatest among three numbers
 
 11. Create the following application in SalesForce.com using Apex Programming Language: <br>
-   I. Electricity Bill Calculator for a given unit
+   I. Electricity Bill Calculator for a given unit <br>
    II. Convert degree Celsius to Fahrenheit
 
 12. Create an application of Currency Converter in SalesForce.com using Apex Programming Language.
