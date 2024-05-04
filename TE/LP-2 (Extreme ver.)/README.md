@@ -17,7 +17,7 @@
 
 6. Implement a solution for a Constraint Satisfaction Problem using Branch-and-Bound and Backtracking for <ins>**N-Queens Problem**</ins> or Graph Coloring Problem.
 
-7. Develop an elementary chatbot for any suitable customer interaction application.
+7. Develop an elementary chatbot for any suitable customer interaction application. <ins>**(Movie Ticket Booking)**</ins>
 
 8. Implement any one of the following Expert System: <br>
    I. Information management
