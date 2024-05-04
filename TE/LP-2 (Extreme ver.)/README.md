@@ -30,16 +30,19 @@
 ----------
 
 ### Cloud Computing
-9. Creating the following application in SalesForce.com using Apex Programming Language: <br>
-   I. Scientific Calculator
+9. Create the following application in SalesForce.com using Apex Programming Language: <br>
+   I. Mathematical Calculator
    II. Student Marksheet Generator
 
-10. Creating an application of Currency Converter in SalesForce.com using Apex Programming Language.
+10. Create the following application in SalesForce.com using Apex Programming Language: <br>
+To find the greatest among three numbers
 
-11. Creating the following application in SalesForce.com using Apex Programming Language: <br>
-   I. Electricity Bill Calculator
+11. Create the following application in SalesForce.com using Apex Programming Language: <br>
+   I. Electricity Bill Calculator for a given unit
    II. Convert degree Celsius to Fahrenheit
 
-12. Design and develop Student Database custom application using Sales force Cloud. Take student details from user (first name, last name, DOB, contact number, email, gender, AADHAR/PAN number, etc. - further formulate age from DOB and display eligibility status for voting in the election.
+12. Create an application of Currency Converter in SalesForce.com using Apex Programming Language.
 
-13. Design and develop Employee Database custom application using Sales force Cloud.
+13. Design and develop Student Database custom application using Sales force Cloud. Take student details from user (first name, last name, DOB, contact number, email, gender, AADHAR/PAN number, etc. - further formulate age from DOB and display eligibility status for voting in the election.
+
+14. Design and develop Employee Database custom application using Sales force Cloud.
