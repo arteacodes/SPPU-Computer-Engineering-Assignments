@@ -4,7 +4,7 @@
 
 1. Implement Depth First Search algorithm and Breadth First Search algorithm. Use an application for undirected graph and develop a recursive algorithm for searching all the vertices of a graph or tree data structure. Also print the levels as it traverses for both algorithms.
 
-2. Implement A* algorithm for any game search problem. <ins>**(8 Tile Puzzle)**</ins>
+2. Implement A* algorithm for any game search problem. <ins>**(Grid Search)**</ins>
 
 3. Implement Greedy Search algorithm on some application for: <br>
    I. Minimum Spanning Tree   OR   <ins>**II. Single-Source Shortest Path Problem**</ins>
