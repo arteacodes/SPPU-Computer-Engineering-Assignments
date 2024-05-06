@@ -1,0 +1,30 @@
+public class GreatestInThree {
+	public static void find(Integer x, Integer y, Integer z)
+    {
+        if (x!=0 && y!=0 && z!=0)
+        {
+            if (x==y && y==z)
+            {
+                System.debug('All numbers are equal.');
+            }
+            else if (x>y && x>z)
+            {
+                System.debug(x + ' is the greatest.');
+            }
+            else if (y>x && y>z)
+            {
+                System.debug(y + ' is the greatest.');
+            }
+            else
+            {
+                System.debug(z + ' is the greatest.');
+            }
+        }
+        else
+        {
+            System.debug('INVALID. TRY AGAIN!');
+        }
+    }
+}
+
+// GreatestInThree.find(10, 12, 11);
