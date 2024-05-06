@@ -1,0 +1,30 @@
+public class CurrencyConverter 
+{
+    private static Map <String, Decimal> rates = new Map <String, Decimal> {
+        'USD-EUR' => 0.82,
+        'USD-INR' => 75.0,
+        'EUR-USD' => 1.22,
+        'EUR-INR' => 91.5,
+        'INR-USD' => 0.013,
+        'INR-EUR' => 0.011
+    };
+        
+    public static void convert(String from_currency, String to_currency, Decimal amount)
+    {
+        Decimal result;
+        String conversionKey = from_currency + '-' + to_currency;
+        
+        if (rates.containsKey(conversionKey))
+        {
+            result = amount * rates.get(conversionKey);
+            result.setScale(2);
+            System.debug('Amount in ' + to_currency + ': ' + result);
+        }
+        else
+        {
+            System.debug('No conversion found.');
+        }
+    }
+}
+
+// CurrencyConverter.convert('USD', 'INR', 150);
