@@ -1,0 +1,12 @@
+public class CelsiusToFahrenheit
+{
+	public static void convert(Decimal c)
+    {
+        Decimal f = (c * 1.8) - 32;
+        f.setScale(1);
+        System.debug('Celsius: ' + c + 'C');
+        System.debug('Fahrenheit: ' + f + 'F');
+    }
+}
+
+// CelsiusToFahrenheit.convert(25.0);
