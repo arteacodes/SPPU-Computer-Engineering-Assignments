@@ -1,0 +1,42 @@
+public class ElectricityBill {
+	public void generate(Double units)
+    {
+        Map <String, Double> ratecard = new Map <String, Double> {
+            '0-100' => 2.5,
+            '100-200' => 5.0,
+            '200-300' => 7.5,
+            '>300' => 10.0
+        };
+            
+        System.debug('RATE CARD');
+        System.debug('----------------------');
+        for (String unit : ratecard.keySet())
+        {
+            System.debug(unit + 'kWh : Rs.' + ratecard.get(unit));
+        }
+        System.debug('----------------------');
+        
+        Double total;
+        if (units>=0 && units<=100)
+        {
+            total = units*2.5;
+        }
+        else if (units>=101 && units<=200)
+        {
+            total = 100*2.5 + (units-100)*5;
+        }
+        else if (units>=201 && units<=300)
+        {
+            total = 100*2.5 + 100*5 + (units-200)*7.5;
+        }
+        else 
+        {
+			total = 100*2.5 + 100*5 + 100*7.5 + (units-300)*10;            
+        }
+        
+        System.debug('Total Amount: Rs. ' + total);
+    }
+}
+
+// ElectricityBill e = new ElectricityBill();
+// e.generate(450);
