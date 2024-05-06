@@ -1,1 +1,48 @@
+public class StudentMarksheet 
+{
+    public void generate(String name, Map<String, Integer> marks)
+    {
+		System.debug('Student Name: ' + name);
+        System.debug('------------------------------');
+		
+        Integer total = 0;
+        for (String subject : marks.keySet())
+        {
+            System.debug(subject + ': ' + marks.get(subject));
+            total += marks.get(subject);
+        }
+        
+        Decimal percent = (Decimal.valueOf(total)/300) * 100;
+        percent = percent.setScale(2);  // round to 2 decimal places
+        
+        String grade;
+        if (percent >= 90) {
+            grade = 'A';
+        }
+        else if (percent >=80) {
+            grade = 'B';
+        }
+        else if (percent >=70) {
+            grade = 'C';
+        }
+        else {
+            grade = 'D';	
+        }
 
+        System.debug('------------------------------');
+        System.debug('Total Marks: ' + total);
+        System.debug('Percentage: ' + percent + '%');
+        System.debug('Grade: ' + grade);
+    }
+}
+
+// Map <String, Integer> marks = new Map <String, Integer> {
+//    'Maths' => 90,
+//    'Science' => 87,
+//    'English' => 89
+// };
+
+// String name = 'Jane Doe';
+
+// StudentMarksheet m = new StudentMarksheet();
+// m.generate(name, marks);
