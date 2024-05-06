@@ -1,1 +1,78 @@
+public class test {
+	public void add(Integer x, Integer y)
+    {
+        Integer result = x + y;
+        System.debug('Addition: ' + x + ' + ' + y + ' = ' + result);
+    }
+    
+    public void subtract(Integer x, Integer y)
+    {
+        Integer result = x - y;
+        System.debug('Subtraction: ' + x + ' - ' + y + ' = ' + result);
+    }
+    
+    public void multiply(Integer x, Integer y)
+    {
+        Integer result = x * y;
+        System.debug('Multiplication: ' + x + ' * ' + y + ' = ' + result);
+    }
+    
+    public void divide(Integer x, Integer y)
+    {
+        Double result = x / y;
+        if (y==0) {
+            System.debug('Divide by zero error!');
+        }
+        else {
+        System.debug('Subtraction: ' + x + ' + ' + y + ' = ' + result);
+        }
+    }
+    
+    public void modulus(Integer x, Integer y)
+    {
+        Integer result = Math.mod(x,y);
+        System.debug('Modulus: ' + x + ' % ' + y + ' = ' + result);
+    }
+    
+    public void power(Integer x, Integer y)
+    {
+        Double result = Math.pow(x,y);
+        System.debug('Power: ' + x + ' ^ ' + y + ' = ' + result);
+    }
+    
+    public void absolute(Integer x)
+    {
+        Integer result = Math.abs(x);
+        System.debug('Absolute of: ' + x + ' = ' + result);
+    }
+    
+    public void square(Integer x)
+    {
+        Integer result1 = Math.pow(x,2);
+        System.debug('Square of: ' + x + ' ^2 = ' + result);
+    }
+    
+    public void factorial(Integer x)
+    {
+        Integer result = 1;
+        for (Integer i=2; i<=x; i++)
+        {
+            result *= i;
+        }
+        System.debug('Factorial of: ' + x + ' = ' + result);
+    }
+}
 
+// RUN IN EXECUTE WINDOW:
+// Calculator c = new Calculator();
+// Integer num1 = 10;
+// Integer num2 = 5;
+// c.add(num1,num2);
+// c.subtract(num1,num2);
+// c.multiply(num1,num2);
+// c.division(num1,num2);
+// c.modulus(num2,3);
+// c.power(num1,4);
+// c.absolute(-20);
+// c.square(num2);
+// c.factorial(5);
