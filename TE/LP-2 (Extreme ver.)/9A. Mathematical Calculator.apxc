@@ -24,7 +24,7 @@ public class Calculator {
             System.debug('Divide by zero error!');
         }
         else {
-        System.debug('Subtraction: ' + x + ' + ' + y + ' = ' + result);
+        System.debug('Division: ' + x + ' / ' + y + ' = ' + result);
         }
     }
     
