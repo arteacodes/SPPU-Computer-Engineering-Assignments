@@ -1,4 +1,4 @@
-public class test {
+public class Calculator {
 	public void add(Integer x, Integer y)
     {
         Integer result = x + y;
