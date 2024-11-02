@@ -52,6 +52,5 @@
 2. Write a program in solidity to create Student data. Use the following constructs:<br>
     - Structures
     - Arrays
-    - Fallback
-
+    - Fallback <br>
 Deploy this as smart contract on Ethereum and Observe the transaction fee and Gas values.
