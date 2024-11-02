@@ -1,48 +1,56 @@
 # Assignment List
 
-### Design & Analysis of Algorithms
+### Design & Analysis of Algorithms (DAA)
 
-1. Implement Depth First Search algorithm and Breadth First Search algorithm. Use an application for undirected graph and develop a recursive algorithm for searching all the vertices of a graph or tree data structure. Also print the levels as it traverses for both algorithms.
+1. Write a program non-recursive and recursive program to calculate Fibonacci numbers and analyze their time and space complexity.
 
-2. Implement A* algorithm for any game search problem. <ins>**(Grid Search)**</ins>
+2. Write a program to implement Huffman Encoding using a greedy strategy.
 
-3. Implement Greedy Search algorithm on some application for: <br>
-   I. Minimum Spanning Tree   OR   <ins>**II. Single-Source Shortest Path Problem**</ins>
+3. Write a program to solve a fractional Knapsack problem using a greedy method.
 
-4. Implement Greedy Search algorithm on some application for: <br>
-   I. Job Scheduling Problem   OR   <ins>**II. Prim's Minimal Spanning Tree Algorithm**</ins> 
+4. Write a program to solve a 0-1 Knapsack problem using dynamic programming or branch and bound strategy.
 
-5. Implement Greedy Search algorithm on some application for: <br>
-   <ins>**I. Kruskal's Minimal Spanning Tree Algorithm**</ins>   OR   II. Dijkstra's Minimal Spanning Tree Algorithm
+5. Design n-Queens matrix having first Queen placed. Use backtracking to place remaining Queens to generate the final n-queen‘s matrix.
 
-6. Implement a solution for a Constraint Satisfaction Problem using Branch-and-Bound and Backtracking for <ins>**N-Queens Problem**</ins> or Graph Coloring Problem.
+6. Write a program for analysis of quick sort by using deterministic and randomized variant.
+ 
+--------------------
 
-7. Develop an elementary chatbot for any suitable customer interaction application. <ins>**(Movie Ticket Booking)**</ins>
+### Machine Learning (ML)
 
-8. Implement any one of the following Expert System: <br>
-   I. Information management
-   <ins>**II. Hospitals and medical facilities**</ins>
-   III. Help desks management
-   IV. Employee performance evaluation
-   V. Stock market trading
-   VI. Airline scheduling and cargo schedules
+1. Predict the price of the Uber ride from a given pickup point to the agreed drop-off location. Perform following tasks: <br>
+1. Pre-process the dataset.<br>
+2. Identify outliers.<br>
+3. Check the correlation.<br>
+4. Implement linear regression and random forest regression models.<br>
+5. Evaluate the models and compare their respective scores like R2, RMSE, etc. Dataset link: https://www.kaggle.com/datasets/yasserh/uber-fares-dataset.
 
-----------
+2. Classify the email using the binary classification method. Email Spam detection has two states: a) Normal State – Not Spam, b) Abnormal State – Spam. Use K-Nearest Neighbors and Support Vector Machine for classification. Analyze their performance. Dataset link: The emails.csv dataset on the Kaggle https://www.kaggle.com/datasets/balaka18/email-spam-classification-dataset-csv
 
-### Machine Learning
-9. Create the following application in SalesForce.com using Apex Programming Language: <br>
-   I. Mathematical Calculator <br>
-   II. Student Marksheet Generator
+3. Given a bank customer, build a neural network-based classifier that can determine whether they will leave or not in the next 6 months. Dataset Description: The case study is from an open-source dataset from Kaggle. The dataset contains 10,000 sample points with 14 distinct features such as CustomerId, CreditScore, Geography, Gender, Age, Tenure, Balance, etc. Link to the Kaggle project: https://www.kaggle.com/barelydedicated/bank-customer-churn-modeling Perform following steps:<br>
+1. Read the dataset.<br>
+2. Distinguish the feature and target set and divide the data set into training and test sets.<br>
+3. Normalize the train and test data.<br>
+4. Initialize and build the model. Identify the points of improvement and implement the same.<br>
+5. Print the accuracy score and confusion matrix (5 points).
 
-10. Create the following application in SalesForce.com using Apex Programming Language: <br>
-To find the greatest among three numbers
+4. Implement Gradient Descent Algorithm to find the local minima of a function. For example, find the local minima of the function y=(x+3)² starting from the point x=2.
 
-11. Create the following application in SalesForce.com using Apex Programming Language: <br>
-   I. Electricity Bill Calculator for a given unit <br>
-   II. Convert degree Celsius to Fahrenheit
+5. Implement K-Nearest Neighbors algorithm on diabetes.csv dataset. Compute confusion matrix, accuracy, error rate, precision and recall on the given dataset. Dataset link : https://www.kaggle.com/datasets/abdallamahgoub/diabetes.
 
-12. Create an application of Currency Converter in SalesForce.com using Apex Programming Language.
+6. Implement K-Means clustering/ hierarchical clustering on sales_data_sample.csv dataset. Determine the number of clusters using the elbow method. Dataset link : https://www.kaggle.com/datasets/kyanyoga/sample-sales-data.
 
-13. Design and develop Student Database custom application using Sales force Cloud. Take student details from user (first name, last name, DOB, contact number, email, gender, AADHAR/PAN number, etc. - further formulate age from DOB and display eligibility status for voting in the election.
+--------------------
 
-14. Design and develop Employee Database custom application using Sales force Cloud.
+### Blockchain Technology (BT)
+
+1. Write a smart contract on a test network, for Bank account of a customer for following operations:<br>
+- Deposit money
+- Withdraw Money
+- Show balance
+
+2. Write a program in solidity to create Student data. Use the following constructs:<br>
+- Structures
+- Arrays
+- Fallback
+<br>Deploy this as smart contract on Ethereum and Observe the transaction fee and Gas values.
