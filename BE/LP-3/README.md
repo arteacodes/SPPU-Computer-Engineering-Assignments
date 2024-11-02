@@ -28,7 +28,7 @@
 2. Classify the email using the binary classification method. Email Spam detection has two states: a) Normal State – Not Spam, b) Abnormal State – Spam. Use K-Nearest Neighbors and Support Vector Machine for classification. Analyze their performance. Dataset link: The emails.csv dataset on the Kaggle https://www.kaggle.com/datasets/balaka18/email-spam-classification-dataset-csv
 
 3. Given a bank customer, build a neural network-based classifier that can determine whether they will leave or not in the next 6 months. Dataset Description: The case study is from an open-source dataset from Kaggle. The dataset contains 10,000 sample points with 14 distinct features such as CustomerId, CreditScore, Geography, Gender, Age, Tenure, Balance, etc. Link to the Kaggle project: https://www.kaggle.com/barelydedicated/bank-customer-churn-modeling Perform following steps:<br>
-1. Read the dataset.<br>
+ 1. Read the dataset.<br>
 2. Distinguish the feature and target set and divide the data set into training and test sets.<br>
 3. Normalize the train and test data.<br>
 4. Initialize and build the model. Identify the points of improvement and implement the same.<br>
