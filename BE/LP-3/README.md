@@ -53,4 +53,4 @@
     - Structures
     - Arrays
     - Fallback
-<br>Deploy this as smart contract on Ethereum and Observe the transaction fee and Gas values.
+Deploy this as smart contract on Ethereum and Observe the transaction fee and Gas values.
