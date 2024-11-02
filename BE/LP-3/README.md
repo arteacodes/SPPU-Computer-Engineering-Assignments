@@ -45,12 +45,12 @@
 ### Blockchain Technology (BT)
 
 1. Write a smart contract on a test network, for Bank account of a customer for following operations:<br>
-- Deposit money
-- Withdraw Money
-- Show balance
+    - Deposit money
+    - Withdraw Money
+    - Show balance
 
 2. Write a program in solidity to create Student data. Use the following constructs:<br>
-- Structures
-- Arrays
-- Fallback
+    - Structures
+    - Arrays
+    - Fallback
 <br>Deploy this as smart contract on Ethereum and Observe the transaction fee and Gas values.
