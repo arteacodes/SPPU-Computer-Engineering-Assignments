@@ -6,13 +6,11 @@
 
 2. Write a program to implement Huffman Encoding using a greedy strategy.
 
-3. Write a program to solve a fractional Knapsack problem using a greedy method.
+3. Write a program to solve a 0-1 Knapsack problem using dynamic programming or branch and bound strategy.
 
-4. Write a program to solve a 0-1 Knapsack problem using dynamic programming or branch and bound strategy.
+4. Design n-Queens matrix having first Queen placed. Use backtracking to place remaining Queens to generate the final n-queen‘s matrix.
 
-5. Design n-Queens matrix having first Queen placed. Use backtracking to place remaining Queens to generate the final n-queen‘s matrix.
-
-6. Write a program for analysis of quick sort by using deterministic and randomized variant.
+5. Write a program for analysis of quick sort by using deterministic and randomized variant.
  
 --------------------
 
@@ -36,9 +34,7 @@
 
 4. Implement Gradient Descent Algorithm to find the local minima of a function. For example, find the local minima of the function y=(x+3)² starting from the point x=2.
 
-5. Implement K-Nearest Neighbors algorithm on diabetes.csv dataset. Compute confusion matrix, accuracy, error rate, precision and recall on the given dataset. Dataset link : https://www.kaggle.com/datasets/abdallamahgoub/diabetes.
-
-6. Implement K-Means clustering/ hierarchical clustering on sales_data_sample.csv dataset. Determine the number of clusters using the elbow method. Dataset link : https://www.kaggle.com/datasets/kyanyoga/sample-sales-data.
+5. Implement K-Means clustering/ hierarchical clustering on sales_data_sample.csv dataset. Determine the number of clusters using the elbow method. Dataset link : https://www.kaggle.com/datasets/kyanyoga/sample-sales-data.
 
 --------------------
 
