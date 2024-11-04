@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// time complexity = best case O(1) when num is 0/1, worst case O(2^n) because each function call results in two more recursive calls.
+// space complexity = best case O(1) when num is 0/1, worst case O(n) as the recursive stack can go as deep as num in the worst case.
 int fibonacci_recursive(int num) {
     if (num == 0) {
         return 0;
@@ -19,6 +21,8 @@ void print(int num) {
     }
 }
 
+// time complexity = best, average and worst case O(n) as it iterates once from 0 to num, performing a constant amount of work in each iteration.
+// space complexity = best, average and worst case O(1) as only a few integer variables (a, b, and c) are used, independent of num.
 void fibonacci_iterative(int num) {
     int a = 0;
     int b = 1;
