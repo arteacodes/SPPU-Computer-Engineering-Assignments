@@ -2,7 +2,7 @@
 
 ### Design & Analysis of Algorithms (DAA)
 
-1. Write a program non-recursive and recursive program to calculate Fibonacci numbers and analyze their time and space complexity.
+1. Write a non-recursive program and a recursive program to calculate Fibonacci numbers and analyze their time and space complexity.
 
 2. Write a program to implement Huffman Encoding using a greedy strategy.
 
